@@ -1,4 +1,4 @@
-const task =[];
+const tasks =[];
 
 const addTask = () => {
-}
+};
