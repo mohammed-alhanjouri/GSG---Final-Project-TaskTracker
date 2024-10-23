@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker with Deadlines</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="stats-container">
+            <div class="details">
+               <h1>Task Tracker with Deadlines</h1>
+                <p>Keep Your Tasks in Track!</p>
+                <div class="progressBar">
+                    <div id="progress"></div>
+                </div> 
+            </div>
+            <div class="stats-numbers">
+                <p id="numbers">1 | 4</p>
+            </div>
+        </div>
+        <div class="tasks-container">
+            <form action="" method="post">
+                <div class="task-info">
+                    <label for="task-name">Task Name</label>
+                    <input id="task-name" type="text" placeholder="Enter Task Name.." required/>
+                    <label for="task-desc">Task Description</label>
+                    <input id="task-desc" type="text" placeholder="Enter Task Description.." required/>
+                    <label for="task-deadline">Task Deadline</label>
+                    <input id="task-deadline" type="text" placeholder="Enter Task Deadline.." required/>
+                    <button type="submit" class="submit-button">+</button>
+                </div>
+            </form>
+            <ul class="tasks-list"></ul>    
+        </div> 
+    </div>
+</body>
+</html>
