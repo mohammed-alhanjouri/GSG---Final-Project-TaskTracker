@@ -1,59 +1,68 @@
 *{
-    /* margin: 0;
-    padding: 0; */
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
+
 body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f8fc;
+    background-color: white;
 }
+
 .container {
     display: flex;
     height: 100vh;
 }
+
 .side-bar{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid #efefef;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin: 15px;
+    padding: 20px;
     width: 250px;
 }
 .side-bar h2 {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     color: #0033CC;
-}
-.side-bar nav ul {
-    list-style: none;
 }
 .side-bar nav ul li {
-    margin-bottom: 20px;
+    list-style: none;
+    margin-bottom: 30px;
 }
 .side-bar nav ul li a {
-    color: #0033CC;
-    background-color: #99CCFF;
+    /* color: #0033CC; */
+    color: #14367B;
+    /* background-color: #99CCFF; */
+    background-color: #EEF2FC;
     text-decoration: none;
     padding: 10px;
     display: block;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background-color 0.3s;
+    /* text-align: center; */
 }
-.side-bar nav ul li a:hover, .side-bar nav ul li.active a {
+.side-bar nav ul li a:hover {
     color: white;
-    background-color: #0033CC;
+    /* background-color: #0033CC; */
+    background-color: #2563DC;
 }
 .logout{
-    color: #CC0000;
-    background-color: #FFCCCC;
+    /* color: #CC0000; */
+    color: #B93A13;
+    /* background-color: #FFCCCC; */
+    background-color: #FDF0EC;
     padding: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 .logout:hover{
     color: white;
-    background-color: #CC0000;
+    background-color: #B93A13;
 }
 
 
