@@ -1,14 +1,24 @@
 *{
-    /* box-sizing: border-box; */
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: normal;
 }
-.header-content{
+.container {
     display: flex;
-    justify-content:flex-end;
-    gap: 50px;
-    border: 1px solid black;
-    height: 90px;
+    height: 100vh;
 }
+.side-bar{
+    border: 1px solid #efefef;
+}
+.side-bar h2 {
+    margin-bottom: 30px;
+    color: #060F23;
+}
+
+/* 
+
 .search-bar{
     display: flex;
     align-items: center;
@@ -41,4 +51,9 @@
 .side-bar{
     border: 1px solid #2563DC;
     height: 500px;
+} */
+.user-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
