@@ -26,16 +26,14 @@ body{
 }
 .side-bar h2 {
     margin-bottom: 50px;
-    color: #0033CC;
+    color: #2563DC;
 }
 .side-bar nav ul li {
     list-style: none;
     margin-bottom: 30px;
 }
 .side-bar nav ul li a {
-    /* color: #0033CC; */
-    color: #14367B;
-    /* background-color: #99CCFF; */
+    color: #2563DC;
     background-color: #EEF2FC;
     text-decoration: none;
     padding: 10px;
@@ -46,13 +44,10 @@ body{
 }
 .side-bar nav ul li a:hover {
     color: white;
-    /* background-color: #0033CC; */
     background-color: #2563DC;
 }
 .logout{
-    /* color: #CC0000; */
     color: #B93A13;
-    /* background-color: #FFCCCC; */
     background-color: #FDF0EC;
     padding: 10px;
     border: none;
@@ -65,35 +60,46 @@ body{
     background-color: #B93A13;
 }
 
-
-
-
-
-
+main{
+    flex: 1;
+    margin: 15px;
+    padding: 20px;
+    border: 1px solid #efefef;
+    border-radius: 10px;
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
 .search-bar{
     display: flex;
     align-items: center;
-    gap: 10px;
-    border: 1px solid #efefef;
-    background-color: white;
-    border-radius: 5px;
-    width: 40%;
-    height: 30px;
+    gap: 5px;
     padding: 5px;
+    width: 70%;
+    border: 1px solid #efefef;
+    border-radius: 8px;
 }
-#search-bar {
+#search-bar{
     width: 100%;
+    padding: 10px;
     border: none;
+    border-radius: 8px;
 }
 .user-section{
     display: flex;
-    gap: 10px;
-    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
     width: 10%;
-    height: 40px;
 }
 .user-avatar{
     width: 40px;
     height: 40px;
     border-radius: 50%;
+}
+.user-section i{
+    color: #2563DC;
+    cursor: pointer;
 }
