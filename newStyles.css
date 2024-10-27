@@ -10,7 +10,7 @@ body{
     /* #f7f8fc */
 }
 
-.container {
+.container{
     display: flex;
     height: 100vh;
 }
@@ -25,15 +25,15 @@ body{
     padding: 20px;
     width: 250px;
 }
-.side-bar h2 {
+.side-bar h1{
     margin-bottom: 50px;
     color: #2563DC;
 }
-.side-bar nav ul li {
+.side-bar nav ul li{
     list-style: none;
     margin-bottom: 30px;
 }
-.side-bar nav ul li a {
+.side-bar nav ul li a{
     color: #2563DC;
     background-color: #EEF2FC;
     text-decoration: none;
@@ -43,7 +43,7 @@ body{
     transition: background-color 0.3s;
     /* text-align: center; */
 }
-.side-bar nav ul li a:hover {
+.side-bar nav ul li a:hover{
     color: white;
     background-color: #2563DC;
 }
@@ -111,14 +111,13 @@ header{
     flex-direction: column;
     gap: 20px;
     margin: 50px;
-    border: 1px solid black;
 }
 .tasks-header{
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
-.tasks-header h2{
+.tasks-header h1{
     color: #5C5C5C;
 }
 .Hbutton{
@@ -150,8 +149,10 @@ header{
     border-radius: 8px;
     padding: 20px;
     width: 32%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .tasks-column h3{
+    color: #2563DC;
     margin-bottom: 20px;
 }
 .task-card{
@@ -180,7 +181,6 @@ header{
     color: #2563DC;
     background-color: #EEF2FC;
 }
-
 .delete{
     color: #B93A13;
     background-color: #FDF0EC;
