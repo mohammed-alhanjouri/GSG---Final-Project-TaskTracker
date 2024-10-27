@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+
+        <aside class="side-bar">
+            <div class="side-bar-header">
+                <h1><i class="fas fa-list"></i> Task Manager</h1>
+                <nav>
+                    <ul>
+                        <li><a href="dashboard.html"><i class="fa-solid fa-table-cells"></i> Dashboard</a></li>
+                        <li><a href="tasks.html"><i class="fa-solid fa-list-check" class="icons"></i> Tasks</a></li>
+                        <li><a href="calendar.html"><i class="fa-regular fa-calendar-check" class="icons"></i> Calendar</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <button class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+        </aside>
+        
+        <main>
+            <header>
+                <div class="search-bar">
+                    <input type="text" id="search-bar" placeholder="Search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+                <div class="user-section">
+                    <i class="fa-solid fa-bell"></i>
+                    <img src="images/officalMe.png" alt="" class="user-avatar">
+                </div>
+            </header>
+        </main>
+    </div>
+</body>
+</html>
