@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+
         <aside class="side-bar">
             <div class="side-bar-header">
                 <h1><i class="fas fa-list"></i> Task Manager</h1>
@@ -34,6 +35,7 @@
                     <img src="images/officalMe.png" alt="" class="user-avatar">
                 </div>
             </header>
+
             <div class="tasks-container">
                 <div class="tasks-header">
                     <h1>Tasks</h1>
@@ -41,30 +43,32 @@
                         <button class="undo Hbutton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
                         <button class="redo Hbutton"><i class="fa-solid fa-arrow-rotate-right"></i></button>
                         <button class="sort Hbutton"><i class="fa-solid fa-sort"></i></button>
-                        <button class="addTask Hbutton">New Task +</button>
+                        <button class="addTask Hbutton">New Task <i class="fa-solid fa-plus"></i></button>
                     </div>
                 </div>
-                <div class="tasks-list">
-                    <div class="tasks-column">
+
+                <div class="task-columns">
+                    <div class="tasks-column to-do">
                         <h3><i class="fas fa-clipboard-list"></i> To Do</h3>
                         <div class="task-card">
                             <h4>Task Title</h4>
+                            <p>Task description will be here, in order to descripe tha task</p>
                             <div class="task-operations">
                                 <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button class="delete"><i class="fa-solid fa-trash"></i></button>
                             </div>
-                            <p>Task description will be here, in order to descripe tha task</p>
                         </div>
                         <div class="task-card">
                             <h4>Task Title1</h4>
+                            <p>Task description will be here, in order to descripe tha task</p>
                             <div class="task-operations">
                                 <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button class="delete"><i class="fa-solid fa-trash"></i></button>
                             </div>
-                            <p>Task description will be here, in order to descripe tha task</p>
                         </div>
                     </div>
-                    <div class="tasks-column">
+                    
+                    <div class="tasks-column in-progress">
                         <h3><i class="fa-solid fa-spinner"></i> In Progress</h3>
                         <div class="task-card">
                             <h4>Task Title 2</h4>
@@ -75,7 +79,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tasks-column">
+
+                    <div class="tasks-column done">
                         <h3><i class="fas fa-check-square"></i> Done</h3>
                         <div class="task-card">
                             <h4>Task Title 3</h4>
@@ -89,12 +94,6 @@
                 </div>
             </div>
         </main>
-
-
-
-
-
     </div>
-    
 </body>
 </html>

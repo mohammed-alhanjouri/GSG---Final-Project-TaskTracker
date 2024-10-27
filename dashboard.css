@@ -27,25 +27,24 @@ body{
 }
 .side-bar h1{
     margin-bottom: 50px;
-    color: #2563DC;
+    color: #007bff;
 }
 .side-bar nav ul li{
     list-style: none;
     margin-bottom: 30px;
 }
 .side-bar nav ul li a{
-    color: #2563DC;
+    color: #007bff;
     background-color: #EEF2FC;
     text-decoration: none;
     padding: 10px;
     display: block;
     border-radius: 8px;
     transition: background-color 0.3s;
-    /* text-align: center; */
 }
 .side-bar nav ul li a:hover{
     color: white;
-    background-color: #2563DC;
+    background-color: #007bff;
 }
 .logout{
     color: #B93A13;
@@ -103,7 +102,7 @@ header{
     border-radius: 50%;
 }
 .user-section i{
-    color: #2563DC;
+    color: #007bff;
     cursor: pointer;
 }
 .tasks-container{
@@ -113,41 +112,40 @@ header{
     margin: 50px;
 }
 .tasks-container h1{
-    color: #5C5C5C;
+    margin-bottom: 20px;
 }
-.Hbutton{
-    color: #5C5C5C;
-    background-color: white;
-    padding: 10px;
-    border: none;
-}
-.addTask{
-    color: white;
-    background-color: #2563DC;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
-}
-.addTask:hover{
-    color: white;
-    background-color: #618DE5;
-    transition: background-color 0.3s;
-}
-
-.tasks-list{
+.task-columns{
     display: flex;
     justify-content: space-between;
 }
 .tasks-column{
-    background-color: #EEF2FC;
-    border: 1px solid #14367B;
     border-radius: 8px;
     padding: 20px;
     width: 32%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 
+.tasks-column.to-do{
+    border-top: 4px solid #007bff;
+    background-color: #c8e0fa;
+}
+.tasks-column.to-do h3{
+    color: #007bff;
+}
+.tasks-column.in-progress{
+    border-top: 4px solid #ffb74d; 
+    background-color: #fce7c8;
+}
+.tasks-column.in-progress h3{
+    color: #ffb74d;
+}
+.tasks-column.done{
+    border-top: 4px solid #66bb6a;
+    background-color: #d7fbd9;
+}
+.tasks-column.done h3{
+    color: #66bb6a;
 }
 .tasks-column h3{
-    color: #2563DC;
     margin-bottom: 20px;
 }
 .task-card{
@@ -173,7 +171,7 @@ header{
     cursor: pointer;
 }
 .edit{
-    color: #2563DC;
+    color: #007bff;
     background-color: #EEF2FC;
 }
 .delete{
