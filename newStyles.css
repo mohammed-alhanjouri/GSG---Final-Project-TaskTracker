@@ -115,22 +115,21 @@ header{
 .tasks-header{
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
     padding: 10px;
 }
 .tasks-header h2{
     color: #5C5C5C;
 }
-.buttons i {
+.Hbutton{
     color: #5C5C5C;
     background-color: white;
-    padding: 5px;
+    padding: 10px;
+    border: none;
 }
 .addTask{
     color: white;
     background-color: #2563DC;
     cursor: pointer;
-    border: none;
     padding: 10px;
     border-radius: 5px;
 }
@@ -138,4 +137,16 @@ header{
     color: white;
     background-color: #618DE5;
     transition: background-color 0.3s;
+}
+
+.tasks-list{
+    display: flex;
+    justify-content: space-between;
+}
+.tasks-column{
+    background-color: #EEF2FC;
+    border: 1px solid #14367B;
+    border-radius: 8px;
+    padding: 20px;
+    width: 32%;
 }
