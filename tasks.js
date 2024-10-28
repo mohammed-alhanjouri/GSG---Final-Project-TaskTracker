@@ -23,7 +23,7 @@ closeButton.addEventListener("click", () => {
 
 // Handle form submission
 taskForm.addEventListener("submit", (event) => {
-    vent.preventDefault();
+    event.preventDefault();
 
     // Capture form data
     const taskName = document.getElementById("taskName").value;
