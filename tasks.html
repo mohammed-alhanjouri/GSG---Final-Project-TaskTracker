@@ -47,12 +47,33 @@
                     </div>
                 </div>
 
+                <!-- Add Task Modal -->
+                <div id="taskModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h2>New Task</h2>
+                        <form id="taskForm">
+                            <label for="taskName">Task Name</label>
+                            <input type="text" id="taskName" name="taskName" required>
+
+                            <label for="taskDescription">Task Description</label>
+                            <textarea id="taskDescription" name="taskDescription" rows="4" required></textarea>
+
+                            <label for="taskDeadline">Task Deadline</label>
+                            <input type="date" id="taskDeadline" name="taskDeadline" required>
+
+                            <button type="submit">Add Task</button>
+                        </form>
+                    </div>
+                </div>
+
                 <div class="task-columns">
                     <div class="tasks-column to-do">
                         <h3><i class="fas fa-clipboard-list"></i> To Do</h3>
                         <div class="task-card">
                             <h4>Task Title</h4>
                             <p>Task description will be here, in order to descripe tha task</p>
+                            <!-- <small><i class="fa-regular fa-calendar"></i> Deadline </small> -->
                             <div class="task-operations">
                                 <button class="edit"><i class="fa-solid fa-pen-to-square"></i></button>
                                 <button class="delete"><i class="fa-solid fa-trash"></i></button>
@@ -95,5 +116,6 @@
             </div>
         </main>
     </div>
+    <script src="tasks.js"></script>
 </body>
 </html>
