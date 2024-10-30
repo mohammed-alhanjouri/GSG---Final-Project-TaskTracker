@@ -7,8 +7,8 @@ const modalTitle = taskModal.querySelector("h2");
 const submitButton = taskForm.querySelector("button");
 
 // Elements for the edit modal
-let isEditing = false;
-let editingIndex = null;
+let isEditing = false; // Flag to track if we're editing an existing task or adding a new one
+let editingIndex = null; // Index of the task being edited (if any)
 
 // Show modal when "New Task" button is clicked
 addTaskButton.addEventListener("click", () => {
@@ -22,23 +22,27 @@ closeButton.addEventListener("click", () => {
 
 // Handle form submission
 taskForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
+    event.preventDefault(); // Prevent form from refreshing the page
+    
+    // Capture form data
     const taskName = document.getElementById("taskName").value;
     const taskDescription = document.getElementById("taskDescription").value;
     const taskDeadline = document.getElementById("taskDeadline").value;
 
     if (isEditing) {
+        // Update an existing task if we're editing
         updateTask(editingIndex, taskName, taskDescription, taskDeadline);
     } else {
+        // Create a new task object
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
         const task = {
-            // id: ,
+            id: tasks.length+1,
             name: taskName,
             description: taskDescription,
             deadline: taskDeadline,
-            status: 'To DO'
+            status: 'To DO' // Default status for new tasks
         };
-        saveTask(task);
+        saveTasks(task);
     }
 
     taskForm.reset();
@@ -46,24 +50,15 @@ taskForm.addEventListener("submit", (event) => {
     displayTasks();
 });
 
-// Open the task modal (for both new and edit)
-// function openTaskModal(task = null, index = null) {
-//     taskModal.style.display = "flex";
-//     isEditing = !!task;
-//     editingIndex = index;
-//     if (task) {
-//         document.getElementById("taskName").value = task.name;
-//         document.getElementById("taskDescription").value = task.description;
-//         document.getElementById("taskDeadline").value = task.deadline;
-//     }
-// }
-function openTaskModal(task = null, index = null) {
+// Function to open the task modal (for both new and edit)
+const openTaskModal = (task = null, index = null) => {
     taskModal.style.display = "flex";
     isEditing = !!task;
     editingIndex = index;
 
-    // Update modal title and button text based on editing state
+    // Update modal title and button text based on (new or edit)
     if (task) {
+        // If editing, to fill the form with the task's current details
         document.getElementById("taskName").value = task.name;
         document.getElementById("taskDescription").value = task.description;
         document.getElementById("taskDeadline").value = task.deadline;
@@ -78,9 +73,8 @@ function openTaskModal(task = null, index = null) {
     }
 }
 
-
 // Close and reset the task modal
-function closeTaskModal() {
+const closeTaskModal = () => {
     taskModal.style.display = "none";
     isEditing = false;
     editingIndex = null;
@@ -88,20 +82,21 @@ function closeTaskModal() {
 }
 
 // Function to save a new task to localStorage
-function saveTask(task) {
+const saveTasks = (task) => {
     const tasks = loadTasks();
     tasks.push(task);
     localStorage.setItem("tasks", JSON.stringify(tasks));
+    alert('Task added successfully!');
 }
 
 // Function to get tasks from localStorage
-function loadTasks() {
+const loadTasks = () => {
     const tasks = localStorage.getItem("tasks");
     return tasks ? JSON.parse(tasks) : []; // Parse tasks if found, otherwise return an empty array
 }
 
-// Function to display tasks in respective columns
-function displayTasks() {
+// Function to display tasks in specific columns
+const displayTasks = () => {
     const tasks = loadTasks();
     const toDoColumn = document.querySelector('.tasks-column.to-do');
     const inProgressColumn = document.querySelector('.tasks-column.in-progress');
@@ -112,15 +107,16 @@ function displayTasks() {
     inProgressColumn.innerHTML = '<h3><i class="fa-solid fa-spinner"></i> In Progress</h3>';
     doneColumn.innerHTML = '<h3><i class="fas fa-check-square"></i> Done</h3>';
 
+    // Loop through each task and display it in the correct column
     tasks.forEach((task, index) => {
-        const taskCard = document.createElement("div");
-        taskCard.classList.add("task-card");
+        const taskCard = document.createElement("div"); // Create a div for each task card
+        taskCard.classList.add("task-card"); // Add styling class for task cards
 
         // Check if task is overdue
         const currentDate = new Date();
         const deadlineDate = new Date(task.deadline);
         if (deadlineDate < currentDate && task.status !== 'Completed') {
-            taskCard.classList.add('overdue'); // Apply overdue styling
+            taskCard.classList.add('overdue'); // Add overdue styling if the task deadline has passed
         }
 
         taskCard.innerHTML = `
@@ -131,10 +127,11 @@ function displayTasks() {
                 <button class="start-button" onclick="startTask(${index})"><i class="fa-solid fa-flag"></i></button>
                 <button class="edit-button" onclick="openTaskModal(loadTasks()[${index}], ${index})"><i class="fa-solid fa-pen-to-square"></i></button>
                 <button class="delete-button" onclick="deleteTask(${index})"><i class="fa-solid fa-trash"></i></button>
-                <button class="doneCheck" onclick="toggleComplete(${index})"><i class="fas fa-check-circle"></i></button>
+                <button class="doneCheck" onclick="completeTask(${index})"><i class="fas fa-check-circle"></i></button>
             </div>
         `;
 
+        // Append the task to the right column based on its status
         if (task.status === 'To DO') {
             toDoColumn.appendChild(taskCard);
         } else if (task.status === 'InProgress') {
@@ -146,41 +143,44 @@ function displayTasks() {
 }
 
 // Function to start a task (move to InProgress)
-function startTask(index) {
+const startTask = (index) => {
     const tasks = loadTasks();
-    tasks[index].status = "InProgress";
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    tasks[index].status = "InProgress"; // Change status to "InProgress"
+    localStorage.setItem("tasks", JSON.stringify(tasks)); // Save the update
     displayTasks();
+    alert(`Task "${tasks[index].name}" is now In Progress.`);
 }
 
 // Function to complete a task (move to Completed)
-function toggleComplete(index) {
+const completeTask = (index) => {
     const tasks = loadTasks();
-    tasks[index].status = "Completed";
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    tasks[index].status = "Completed"; // Change status to "Completed"
+    localStorage.setItem("tasks", JSON.stringify(tasks)); // Save the update
     displayTasks();
+    alert(`Task "${tasks[index].name}" is Done!`);
 }
 
 // Function to edit a task (update in localStorage)
-function updateTask(index, name, description, deadline) {
+const updateTask = (index, name, description, deadline) => {
     const tasks = loadTasks();
     tasks[index].name = name;
     tasks[index].description = description;
     tasks[index].deadline = deadline;
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks)); // Save the update
+    alert(`Task "${tasks[index].name}" updated successfully.`);
 }
 
 // Function to delete a task
-function deleteTask(index) {
+const deleteTask = (index) => {
     const confirmDel = confirm("Are you sure you want to delete this task?");
     if (confirmDel) {
         const tasks = loadTasks();
-        tasks.splice(index, 1);
-        localStorage.setItem("tasks", JSON.stringify(tasks));
+        tasks.splice(index, 1); // Remove the task at the given index
+        localStorage.setItem("tasks", JSON.stringify(tasks)); 
         displayTasks();
-        alert("Task deleted successfully.");
+        alert(`Task deleted successfully.`);
     }
 }
 
-// Call displayTasks on page load to initialize tasks display
+// Display tasks when the page loads
 window.onload = displayTasks;
