@@ -1,4 +1,4 @@
-// Get modal elements
+// Get task modal elements
 const taskModal = document.getElementById("taskModal");
 const addTaskButton = document.querySelector(".addTask");
 const closeButton = document.querySelector(".close-button");
@@ -6,16 +6,77 @@ const taskForm = document.getElementById("taskForm");
 const modalTitle = taskModal.querySelector("h2");
 const submitButton = taskForm.querySelector("button");
 
+// Get search modal elements
+const searchModal = document.getElementById("searchModal");
+const searchResults = document.getElementById("searchResults");
+const closeSearchButton = document.querySelector(".close-search-button");
+const searchBar = document.getElementById("search-bar");
+const searchButton = document.querySelector(".searchButton");
+
+// Call search function when search button is clicked
+searchButton.addEventListener("click", () => {
+    searchTasks(); // Call searchTasks to perform the search and display results
+});
+
+// Hide search modal when "X" button is clicked
+closeSearchButton.addEventListener("click", () => {
+    closeSearchModal();
+});
+
+// Show search modal function
+const openSearchModal = () => {
+    searchModal.style.display = "flex";
+};
+
+// Hide search modal function
+const closeSearchModal = () => {
+    searchModal.style.display = "none";
+    searchResults.innerHTML = ""; // Clear previous results
+};
+
+// Function to search for tasks by keyword
+const searchTasks = () => {
+    const tasks = loadTasks(); // Load tasks from localStorage
+    const searchKeyword = searchBar.value.trim(); // Get search term from the search bar
+
+    if (searchKeyword === "") {
+        alert("Please enter a keyword to search."); // Alert if the search keyword is empty
+        return;
+    }
+
+    // Filter tasks based on the keyword
+    const filteredTasks = tasks.filter(task => task.name.toLowerCase().includes(searchKeyword.toLowerCase()));
+
+    // Display results in the modal
+    if (filteredTasks.length > 0) {
+        filteredTasks.forEach(task => {
+            const taskElement = document.createElement("div");
+            taskElement.innerHTML = `
+            <h3>${task.name}</h3>
+            <p>${task.description}</p>
+            <small><i class="fa-regular fa-calendar-check"></i> Deadline: ${task.deadline}</small>
+            `;
+            searchResults.appendChild(taskElement);
+        });
+    } else {
+        const noResults = document.createElement("p");
+        noResults.textContent = "No tasks found!";
+        searchResults.appendChild(noResults);
+    }
+
+    openSearchModal(); // Open the modal to display results
+};
+
 // Elements for the edit modal
 let isEditing = false; // Flag to track if we're editing an existing task or adding a new one
 let editingIndex = null; // Index of the task being edited (if any)
 
-// Show modal when "New Task" button is clicked
+// Show task modal when "New Task" button is clicked
 addTaskButton.addEventListener("click", () => {
     openTaskModal();
 });
 
-// Hide modal when "X" button is clicked
+// Hide task modal when "X" button is clicked
 closeButton.addEventListener("click", () => {
     closeTaskModal();
 });

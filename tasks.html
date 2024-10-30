@@ -30,8 +30,17 @@
             <header>
                 <div class="search-bar">
                     <input type="text" id="search-bar" placeholder="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
+                <!-- Search Results Modal -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-search-button">&times;</span>
+                        <h2>Search Results</h2>
+                        <div id="searchResults"></div>
+                    </div>
+                </div>
+
                 <div class="user-section">
                     <i class="fa-solid fa-bell"></i>
                     <img src="images/officalMe.png" alt="" class="user-avatar">
