@@ -35,6 +35,8 @@ taskForm.addEventListener("submit", (e) => {
         deadline: taskDeadline,
         status: 'To DO'
     }
+    saveTask(tasks);
+    
 })
 
 // Open the task modal (for both new and edit)
