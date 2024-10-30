@@ -1,4 +1,4 @@
-# Task Manager Application
+## Task Manager Application
 
 #### This Task Manager is a web-based application designed to help users manage their tasks efficiently. It provides features to create, edit, and delete tasks, organize tasks by their current status (To Do, In Progress, and Done), and search for specific tasks by keywords. The application includes a dashboard-style sidebar for easy navigation, a search bar to find tasks quickly, and modals for adding, editing, and viewing search results.
 
