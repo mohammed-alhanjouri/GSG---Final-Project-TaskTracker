@@ -25,6 +25,10 @@ body{
     padding: 20px;
     width: 250px;
 }
+.side-bar img{
+    width: 90px;
+    height: 60px;
+}
 .side-bar h1{
     margin-bottom: 50px;
     color: #007bff;
