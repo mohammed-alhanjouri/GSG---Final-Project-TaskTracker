@@ -96,7 +96,8 @@ function saveTask(task) {
 
 // Function to get tasks from localStorage
 function loadTasks() {
-    return JSON.parse(localStorage.getItem("tasks")) || [];
+    const tasks = localStorage.getItem("tasks");
+    return tasks ? JSON.parse(tasks) : []; // Parse tasks if found, otherwise return an empty array
 }
 
 // Function to display tasks in respective columns
