@@ -94,6 +94,15 @@ header{
     border: none;
     border-radius: 8px;
 }
+.searchButton{
+    color: white;
+    background-color: #007bff;
+    cursor: pointer;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
+
 /* Search Results Modal */
 #searchModal {
     display: none;
