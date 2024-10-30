@@ -47,7 +47,8 @@ body{
     background-color: #007bff;
 }
 .logout{
-    color: #B93A13;
+    /* color: #B93A13; */
+    color: #ff5454;
     background-color: #FDF0EC;
     padding: 10px;
     border: none;
@@ -57,7 +58,7 @@ body{
 }
 .logout:hover{
     color: white;
-    background-color: #B93A13;
+    background-color: #ff5454;
 }
 
 main{
@@ -191,14 +192,21 @@ header{
     border-radius: 5px;
     cursor: pointer;
 }
-.edit{
+.start-button{
+    color: #666;
+}
+.edit-button{
     color: #007bff;
     background-color: #EEF2FC;
 }
-.delete{
+.delete-button{
     color: #B93A13;
     background-color: #FDF0EC;
-} 
+}
+.doneCheck{
+    color: darkgreen;
+    background-color: #d7fbd9;
+}
 .modal {
     display: none;
     position: fixed;
@@ -250,4 +258,8 @@ header{
 }
 #taskForm button:hover {
     background-color: #2563DC;
+}
+.overdue {
+    border: 1px solid red;
+    background-color: #ffe6e6;
 }
