@@ -20,3 +20,5 @@
 ##### - Task Status Management: Use the task status buttons to move tasks to the appropriate status category.
   
 ##### This project is an ideal tool for those looking to stay organized and manage their daily tasks effectively.
+
+<img width="1512" alt="TaskManager" src="https://github.com/user-attachments/assets/ab72306d-ede3-4280-afb3-46555682531a">
