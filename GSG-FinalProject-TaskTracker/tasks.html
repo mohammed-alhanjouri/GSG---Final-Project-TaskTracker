@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+        <aside class="side-bar">
+            <div class="side-bar-header">
+                <img src="images/logo-modified.png" alt="">
+                <h1>Task Manager</h1>
+                <nav>
+                    <ul>
+                        <li><a href="dashboard.html"><i class="fa-solid fa-table-cells"></i> Dashboard</a></li>
+                        <li><a href="tasks.html"><i class="fa-solid fa-list-check" class="icons"></i> Tasks</a></li>
+                        <li><a href="calendar.html"><i class="fa-regular fa-calendar-check" class="icons"></i> Calendar</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <button class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+        </aside>
+        
+        <main>
+            <header>
+                <div class="search-bar">
+                    <input type="text" id="search-bar" placeholder="Search">
+                    <button class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <!-- Search Results Modal -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-search-button">&times;</span>
+                        <h2>Search Results</h2>
+                        <div id="searchResults"></div>
+                    </div>
+                </div>
+
+                <div class="user-section">
+                    <i class="fa-solid fa-bell"></i>
+                    <img src="images/officalMe.png" alt="" class="user-avatar">
+                </div>
+            </header>
+
+            <div class="tasks-container">
+                <div class="tasks-header">
+                    <h1>Tasks</h1>
+                    <div class="buttons">
+                        <button class="undo Hbutton"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+                        <button class="redo Hbutton"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+                        <button class="sort Hbutton"><i class="fa-solid fa-sort"></i></button>
+                        <button class="addTask Hbutton">New Task <i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Add Task Modal -->
+                <div id="taskModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h2>New Task</h2>
+                        <form id="taskForm">
+                            <label for="taskName">Task Name</label>
+                            <input type="text" id="taskName" name="taskName" required>
+
+                            <label for="taskDescription">Task Description</label>
+                            <textarea id="taskDescription" name="taskDescription" rows="4" required></textarea>
+
+                            <label for="taskDeadline">Task Deadline</label>
+                            <input type="date" id="taskDeadline" name="taskDeadline" required>
+
+                            <button type="submit">Add Task</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="task-columns">
+                    <div class="tasks-column to-do"></div>
+                    
+                    <div class="tasks-column in-progress"></div>
+
+                    <div class="tasks-column done"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="tasks.js"></script>
+</body>
+</html>

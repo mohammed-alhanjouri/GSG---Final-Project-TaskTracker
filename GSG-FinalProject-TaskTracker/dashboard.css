@@ -1,0 +1,99 @@
+    /* Container for task counts */
+        .task-counts-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        
+        /* Styling for individual task count boxes */
+        .task-box {
+            width: 150px;
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        /* Colors for each task status box */
+        .to-do {background-color:  #007bff}      
+        .in-progress { background-color: #ffb74d; } 
+        .completed { background-color: #66bb6a; }
+        
+/* Task Results Styling */
+#taskResults {
+    margin-top: 20px;
+}
+
+.task-item {
+    background-color: #f4f4f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-item h3 {
+    margin: 0;
+    color: #333;
+}
+
+.task-item p {
+    margin: 5px 0 0;
+    color: #666;
+}
+
+.Percentages{
+    width:30vw;
+    height: 20vw;
+}
+h2{
+    margin-top: 20px;
+    margin-left: 30px; 
+    margin-bottom: 20px;
+    color: #14367B;
+}
+  
+/* Center the status-container within the parent container */
+.status-container {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    gap: 20px;
+}
+  
+  /* Status styles */
+  .status {
+    text-align: center;
+  }
+  
+  /* Circular progress styling */
+  .circular-progress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: conic-gradient(#4caf50 0deg, #cccccc 0deg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Inner circle styling */
+  .circular-progress .inner-circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #14367B;
+  }
