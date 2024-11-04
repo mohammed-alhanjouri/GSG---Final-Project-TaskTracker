@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
+    <title>Calendar</title>
+    <link rel="stylesheet" href="tasks.css">
     <link rel="stylesheet" href="calendar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,18 +26,51 @@
             <button class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
         </aside>
         
-        <main>
+        <!-- ALAA CODE FOR CALENDAR PAGE -->
+        <main style="width: 80vw;">
             <header>
                 <div class="search-bar">
                     <input type="text" id="search-bar" placeholder="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
+                <!-- Search Results Modal -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-search-button">&times;</span>
+                        <h2>Search Results</h2>
+                        <div id="searchResults"></div>
+                    </div>
+                </div>
+
                 <div class="user-section">
                     <i class="fa-solid fa-bell"></i>
                     <img src="images/officalMe.png" alt="" class="user-avatar">
                 </div>
-            </header>   
+            </header>
+            <div class="wrapper">
+                <header>
+                    <p class="current-date"></p>
+                    <div class="icons">
+                    <span id="prev" class="material-symbols-rounded"><</span>
+                    <span id="next" class="material-symbols-rounded">></span>
+                    </div>
+                </header>
+                <div class="calendar">
+                    <ul class="weeks">
+                    <li>Sun</li>
+                    <li>Mon</li>
+                    <li>Tue</li>
+                    <li>Wed</li>
+                    <li>Thu</li>
+                    <li>Fri</li>
+                    <li>Sat</li>
+                    </ul>
+                    <ul class="days"></ul>
+                </div>
+            </div>
         </main>
     </div>
+    <script src="tasks.js"></script>
+    <script src="calendar.js"></script>
 </body>
 </html>

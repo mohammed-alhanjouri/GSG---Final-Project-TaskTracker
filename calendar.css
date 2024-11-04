@@ -1,112 +1,126 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ----- ALAA CODE FOR CALENDAR PAGE STYLES ----- */
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  /* justify-content: center; */
+  height: 100%;
+  width: 100%;
+}
+.wrapper {
+  width: 450px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 15px 40px rgba(51, 42, 228, 0.15);
+  height: 500px;
+  align-self: center;
+}
+.wrapper header {
+  display: flex;
+  align-items: center;
+  padding: 25px 30px 10px;
+  justify-content: space-between;
+}
+header .icons {
+  display: flex;
+}
+header .icons span {
+  height: 38px;
+  width: 38px;
+  margin: 0 1px;
+  cursor: pointer;
+  color: #0033CC;
+  text-align: center;
+  line-height: 38px;
+  font-size: 1.9rem;
+  user-select: none;
+  border-radius: 50%;
+}
+.icons span:last-child {
+  margin-right: -10px;
+}
+header .icons span:hover {
+  background: #f2f2f2;
+}
+header .current-date {
+  font-size: 1.45rem;
+  font-weight: 500;
+  color: #0033CC;
+}
+.calendar {
+  padding: 20px;
+}
+.calendar ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+}
+.calendar .days {
+  margin-bottom: 20px;
+}
+.calendar li {
+  color: rgb(27, 26, 85);
+  /* for black */
+  /* color: #fff; */
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li {
+  font-weight: 500;
+  cursor: default;
+}
+.calendar .days li {
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive {
+  color: #aaa;
+}
+.days li.active {
+  color: #fff;
+}
+.days li::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before {
+  background: #0033CC;
+}
+.days li:not(.active):hover::before {
+  background: #f2f2f2;
+
+}
+.days li.deadline {
+  position: relative;
+  color: red;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    background-color: white;
-    /* #f7f8fc */
-}
-
-.container{
-    display: flex;
-    height: 100vh;
-}
-
-.side-bar{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid #efefef;
-    border-radius: 10px;
-    margin: 15px;
-    padding: 20px;
-    width: 250px;
-}
-.side-bar img{
-    width: 120px;
-    height: 70px;
-}
-.side-bar h1{
-    margin-bottom: 50px;
-    color: #007bff;
-}
-.side-bar nav ul li{
-    list-style: none;
-    margin-bottom: 30px;
-}
-.side-bar nav ul li a{
-    color: #007bff;
-    background-color: #EEF2FC;
-    text-decoration: none;
-    padding: 10px;
-    display: block;
-    border-radius: 8px;
-    transition: background-color 0.3s;
-}
-.side-bar nav ul li a:hover{
-    color: white;
-    background-color: #007bff;
-}
-.logout{
-    /* color: #B93A13; */
-    color: #ff5454;
-    background-color: #FDF0EC;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.logout:hover{
-    color: white;
-    background-color: #ff5454;
-}
-
-main{
-    /* display: flex;
-    flex-direction: column;
-    gap: 20px; */
-    flex: 1;
-    margin: 15px;
-    padding: 20px;
-    border: 1px solid #efefef;
-    border-radius: 10px;
-}
-header{
-    display: flex;
-    justify-content: space-around;
-}
-.search-bar{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px;
-    width: 70%;
-    border: 1px solid #efefef;
-    border-radius: 8px;
-}
-#search-bar{
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-}
-.user-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    width: 10%;
-}
-.user-avatar{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-}
-.user-section i{
-    color: #007bff;
-    cursor: pointer;
+.days li.deadline::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border: 2px solid red;
+  border-radius: 50%;
 }
