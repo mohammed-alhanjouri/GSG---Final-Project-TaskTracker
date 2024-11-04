@@ -74,6 +74,7 @@ main{
     padding: 20px;
     border: 1px solid #efefef;
     border-radius: 10px;
+    overflow: scroll;
 }
 header{
     display: flex;

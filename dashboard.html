@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="tasks.css">
     <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="calendar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -25,62 +27,101 @@
             <button class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
         </aside>
         
-        <main>
+        <!-- ----- ALAA CODE FOR DASHBOARD PAGE ----- -->
+        <main style="width: 80vw;">
             <header>
                 <div class="search-bar">
                     <input type="text" id="search-bar" placeholder="Search">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <button class="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </div>
+                <!-- Search Results Modal -->
+                <div id="searchModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-search-button">&times;</span>
+                        <h2>Search Results</h2>
+                        <div id="searchResults"></div>
+                    </div>
+                </div>
+
                 <div class="user-section">
                     <i class="fa-solid fa-bell"></i>
                     <img src="images/officalMe.png" alt="" class="user-avatar">
                 </div>
             </header>
-            <!-- <div class="dashboard-container">
-                <h1>Dashboard</h1>
-                <div class="welcome-section">
-                    <div class="welcome-text">
-                        <h2>Welcome To</h2>
-                        <h1>Your Task Management Area</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur. Bibendum risus urna tortor praesent.</p>
-                        <button class="learn-more-btn">Learn More</button>
-                    </div>
-                    <div class="welcome-image">
-                        <img src="images/dashboard.png" alt="Task Management Illustration">
+            <div class="task-counts-container">
+                <div id="to-do" class="task-box to-do">
+                    <div>To Do</div>
+                    <div id="toDoCount">0</div>
+                </div>
+                <div id="in-progress" class="task-box in-progress">
+                    <div>In Progress</div>
+                    <div id="inProgressCount">0</div>
+                </div>
+                <div id="completed" class="task-box completed">
+                    <div>Completed</div>
+                    <div id="completedCount">0</div>
+                </div>
+            </div>
+            <div class="flex-wrap" style="display: flex; flex-direction: row;">
+
+                <div class="wrapper" style="width: 30vw; height: 450px; margin-top: 5px;">
+                    <header>
+                        <p class="current-date"></p>
+                        <div class="icons">
+                        <span id="prev" class="material-symbols-rounded"><</span>
+                        <span id="next" class="material-symbols-rounded">></span>
+                        </div>
+                    </header>
+                    <div class="calendar">
+                        <ul class="weeks">
+                        <li>Sun</li>
+                        <li>Mon</li>
+                        <li>Tue</li>
+                        <li>Wed</li>
+                        <li>Thu</li>
+                        <li>Fri</li>
+                        <li>Sat</li>
+                        </ul>
+                        <ul class="days"></ul>
                     </div>
                 </div>
-                
-                <div class="task-stats">
-                    <div class="task-card total-tasks">
-                        <i class="fas fa-tasks"></i>
-                        <h3>1220</h3>
-                        <p>Total Tasks</p>
+                <div class="Percentages">
+                    <h2>Task Status Percentages</h2>
+                    <div class="status-container">
+                    <div class="status" id="todo-status">
+                        <p style="color: #14367B;">To Do</p>
+                        <div class="circular-progress" data-percentage="0">
+                        <div class="inner-circle">0%</div>
+                        </div>
                     </div>
-                    <div class="task-card in-progress">
-                        <i class="fas fa-spinner"></i>
-                        <h3>07</h3>
-                        <p>In Progress</p>
-                    </div>
-                    <div class="task-card pending">
-                        <i class="fas fa-hourglass-half"></i>
-                        <h3>43</h3>
-                        <p>Pending</p>
-                    </div>
-                    <div class="task-card completed">
-                        <i class="fas fa-check-circle"></i>
-                        <h3>1550</h3>
-                        <p>Completed</p>
+                    <div class="status" id="inprogress-status">
+                        <p style="color: #14367B;">In Progress</p>
+                        <div class="circular-progress" data-percentage="0">
+                        <div class="inner-circle">0%</div>
+                        </div>
+                    </div> 
+                    <div class="status" id="done-status">
+                        <p style="color: #14367B;">Done</p>
+                        <div class="circular-progress" data-percentage="0">
+                        <div class="inner-circle">0%</div>
+                        </div>
                     </div>
                 </div>
-            </div> -->
-            
-        </main>
-
-
-
-
-
-    </div>
+                <div style="margin-left: 20px;height: 250px; margin-top: 10px ; border:1px solid rgb(180, 234, 180); border-radius: 10px; background-color: rgb(247, 248, 227); ">
+                    <ul>
+                        <li style="color: #4caf50;"> To Do </li>
+                        <li style="color: #ff9800;"> In Progress</li>
+                        <li style="color: #f44336;"> Completed </li>
+                    </ul>
+                    <canvas id="taskChart" width="300" height="200"></canvas>
+                  </div>  
     
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="tasks.js"></script>
+    <script src="dashboard.js"></script>
+    <script src="calendar.js"></script>
 </body>
 </html>
